@@ -1,4 +1,4 @@
-const people = [{ name: "Max" }, { name: "Jack" }, { name: "Marry" }];
+// const people = [{ name: "Max" }, { name: "Jack" }, { name: "Marry" }];
 
 // Using find() in the ES6
 // function getName(name) {
@@ -29,3 +29,30 @@ const people = [{ name: "Max" }, { name: "Jack" }, { name: "Marry" }];
 // console.log(a);
 
 // const newArray = [1, 2, 3].map(() => true);
+
+//ES6 CRASH COURSE
+const person = {
+  name: "Ngesa",
+  walk() {
+    console.log(this);
+  },
+  talk() {},
+};
+
+//Use dot notation when you know ahead of time what property/method you're going to access
+// person.talk();
+// person.name = "";
+
+//Use bracketes '[]' when you dont know what property/method you're going to access
+
+// const targetMember = "name";
+// person[targetMember.value] = "John";
+
+// person.walk(); //calling a function as a method using 'this'
+
+// const walk = person.walk;
+// console.log(walk);
+
+//Binding 'this'
+const walk = person.walk.bind(person);
+walk(); //calling a function as a standalone/outside the function using 'this'
